@@ -1,0 +1,22 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  user(id: Int!): User!
+  users: [User!]!
+}
+
+type User {
+  firstName: String
+  id: Int!
+  isActive: Boolean!
+  lastName: String!
+  vegetables: [Vegetable]!
+}
+
+type Vegetable {
+  id: Int!
+  name: String!
+  user: User
+}
