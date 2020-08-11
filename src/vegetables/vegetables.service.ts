@@ -23,6 +23,10 @@ export class VegetablesService {
   findOne(id: number): Promise<Vegetable> {
     return this.vegetablesRepository.findOne(id);
   }
+  
+  async create(vegetable:Vegetable):Promise<Vegetable>{
+    return this.vegetablesRepository.save(vegetable);
+  }
 
   async remove(id: string): Promise<void> {
     await this.vegetablesRepository.delete(id);

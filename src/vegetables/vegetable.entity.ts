@@ -11,8 +11,9 @@ export class Vegetable {
 
   @Column()
   @Field()
-  name?: string;
+  name: string;
 
+  @Column("integer",{name:"userId", nullable:true})
   @ManyToOne(type=>User,user=>user.vegetables)
   @Field(()=>User,{nullable:true})
   user: User;

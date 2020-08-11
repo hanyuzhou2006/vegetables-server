@@ -2,9 +2,15 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Mutation {
+  createUser(user: UserInput!): User!
+  createVegetable(vegetable: VegetableInput!): Vegetable!
+}
+
 type Query {
   user(id: Int!): User!
   users: [User!]!
+  vegetables: [Vegetable!]!
 }
 
 type User {
@@ -15,8 +21,19 @@ type User {
   vegetables: [Vegetable]!
 }
 
+input UserInput {
+  firstName: String
+  isActive: Boolean!
+  lastName: String!
+}
+
 type Vegetable {
   id: Int!
   name: String!
   user: User
+}
+
+input VegetableInput {
+  name: String!
+  userId: Int!
 }
