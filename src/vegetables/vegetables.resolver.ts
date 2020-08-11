@@ -21,8 +21,7 @@ export class VegetablesResolver {
 
   @ResolveField()
   async user(@Parent() vegetable: Vegetable){
-    console.log(vegetable)
-    return this.usersService.findOne(vegetable.user.id);
+    return this.usersService.findOne(vegetable.userId);
   }
   @Mutation(returns => Vegetable)
   async createVegetable(@Args('vegetable') vegetableInput:VegetableInput){
